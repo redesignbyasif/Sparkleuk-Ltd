@@ -92,9 +92,9 @@
     });
   }
 
-  // 4. Interactive Service Sector Filter
-  const filterButtons = document.querySelectorAll('.filter-chip[data-filter]');
-  const serviceRows = document.querySelectorAll('.service-row[data-categories]');
+  // 4. Interactive Service Category Filter
+  const filterButtons = document.querySelectorAll('.service-tab[data-filter]');
+  const serviceRows = document.querySelectorAll('.service-card[data-categories]');
 
   filterButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
