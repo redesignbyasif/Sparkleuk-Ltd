@@ -33,16 +33,24 @@
   <div class="top-strip" role="region" aria-label="Company highlights">
     <div class="container top-strip__inner">
       <div class="top-strip__left">
-        <span>Veteran‑Founded &amp; Cleaner‑Led</span>
+        <span class="top-strip__item">
+          <svg class="top-strip__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 2L3.5 4.8v4.9c0 4.3 2.8 8 6.5 9.1 3.7-1.1 6.5-4.8 6.5-9.1V4.8L10 2z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M7.3 10.2l1.8 1.8 3.7-3.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Veteran‑Founded &amp; Cleaner‑Led
+        </span>
         <span class="dot-teal" aria-hidden="true">•</span>
-        <span>Fully Insured &amp; Vetted</span>
-        <span class="dot-teal top-strip__hide-sm" aria-hidden="true">•</span>
-        <span class="top-strip__hide-sm">Serving Nationwide Across the UK</span>
+        <span class="top-strip__item">Fully Insured &amp; Vetted</span>
+        <span class="dot-teal top-strip__hide-md" aria-hidden="true">•</span>
+        <span class="top-strip__item top-strip__hide-md">Nationwide UK Coverage</span>
       </div>
-      <div class="top-strip__right">
-        <span class="dot-teal" aria-hidden="true">•</span>
-        <span>Donating <strong>2.5% of every job’s profits</strong> to Help for Heroes</span>
-      </div>
+      <a href="#help-for-heroes" class="top-strip__pledge">
+        <svg class="top-strip__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 17.2s-5.8-3.7-5.8-8.4A3.5 3.5 0 0 1 7.8 5.3c1 0 1.7.5 2.2 1.2.5-.7 1.2-1.2 2.2-1.2a3.5 3.5 0 0 1 3.6 3.5c0 4.7-5.8 8.4-5.8 8.4z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Donating <strong>2.5% of job profits</strong> to Help for Heroes</span>
+      </a>
     </div>
   </div>
 
@@ -63,7 +71,14 @@
         <ul class="site-nav__list">
           <li><a href="#about" class="site-nav__link">About Us</a></li>
           <li><a href="#services" class="site-nav__link">Cleaning Services</a></li>
-          <li><a href="#pat-testing" class="site-nav__link site-nav__link--pat">In‑House PAT Testing</a></li>
+          <li>
+            <a href="#pat-testing" class="site-nav__link site-nav__link--pat">
+              <svg class="site-nav__bolt" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8.8 1.5L3.2 9h4.3l-.7 5.5L12.8 7H8.5l.3-5.5z" fill="currentColor"/>
+              </svg>
+              <span>PAT Testing</span>
+            </a>
+          </li>
           <li><a href="#who-we-help" class="site-nav__link">Who We Help</a></li>
           <li><a href="#help-for-heroes" class="site-nav__link">Help for Heroes</a></li>
           <li><a href="#faq" class="site-nav__link">FAQs</a></li>
@@ -71,7 +86,14 @@
       </nav>
 
       <div class="site-header__actions">
-        <a href="#quote" class="btn btn--navy btn--header">Get an Honest Quote</a>
+        <a href="#quote" class="btn-header-cta">
+          <span>Get Free Quote</span>
+          <span class="btn-header-cta__icon" aria-hidden="true">
+            <svg viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M10 4.75L14.25 9 10 13.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
 
         <button
           type="button"

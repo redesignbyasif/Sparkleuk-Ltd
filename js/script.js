@@ -92,6 +92,32 @@
     });
   }
 
+  // 3b. Desktop Header Active-Section Scroll Spy
+  const desktopNavLinks = document.querySelectorAll('.site-nav__link[href^="#"]');
+  if (desktopNavLinks.length > 0 && 'IntersectionObserver' in window) {
+    const observedSections = [];
+    desktopNavLinks.forEach((link) => {
+      const id = (link.getAttribute('href') || '').slice(1);
+      const sec = id ? document.getElementById(id) : null;
+      if (sec) observedSections.push({ id, sec, link });
+    });
+
+    const sectionSpy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            desktopNavLinks.forEach((l) => l.classList.remove('is-current'));
+            const match = observedSections.find((item) => item.sec === entry.target);
+            if (match) match.link.classList.add('is-current');
+          }
+        });
+      },
+      { rootMargin: '-28% 0px -58% 0px', threshold: 0 }
+    );
+
+    observedSections.forEach((item) => sectionSpy.observe(item.sec));
+  }
+
   // 4. Interactive Service Category Filter
   const filterButtons = document.querySelectorAll('.service-tab[data-filter]');
   const serviceRows = document.querySelectorAll('.service-card[data-categories]');
