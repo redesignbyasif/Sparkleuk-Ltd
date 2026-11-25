@@ -87,7 +87,8 @@
 
       <div class="site-header__actions">
         <a href="#quote" class="btn-header-cta">
-          <span>Get Free Quote</span>
+          <span class="btn-header-cta__text-desktop">Get Free Quote</span>
+          <span class="btn-header-cta__text-mobile">Free Quote</span>
           <span class="btn-header-cta__icon" aria-hidden="true">
             <svg viewBox="0 0 18 18" fill="none">
               <path d="M3.75 9h10.5M10 4.75L14.25 9 10 13.25" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -109,40 +110,6 @@
             <span class="menu-toggle__bar"></span>
           </span>
         </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-drawer" id="mobile-drawer" hidden>
-      <div class="mobile-drawer__backdrop" id="mobile-drawer-backdrop"></div>
-      <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
-        <div class="mobile-drawer__top">
-          <img
-            src="assets/logo/sparkleuk-logo-light.png"
-            alt="Sparkleuk Ltd"
-            width="180"
-            height="182"
-            class="mobile-drawer__logo"
-          >
-          <p>Veteran‑founded &amp; cleaner‑led property cleaning and qualified in‑house PAT testing across the UK.</p>
-        </div>
-
-        <nav aria-label="Mobile primary navigation">
-          <ul class="mobile-drawer__list">
-            <li><a href="#about" class="mobile-drawer__link">About Sparkleuk Ltd</a></li>
-            <li><a href="#services" class="mobile-drawer__link">Our Cleaning Services</a></li>
-            <li><a href="#pat-testing" class="mobile-drawer__link mobile-drawer__link--teal">In‑House PAT Testing &amp; Certificates</a></li>
-            <li><a href="#who-we-help" class="mobile-drawer__link">Homes, Landlords, HMOs &amp; Offices</a></li>
-            <li><a href="#help-for-heroes" class="mobile-drawer__link">2.5% Help for Heroes Pledge</a></li>
-            <li><a href="#how-it-works" class="mobile-drawer__link">How Booking Works</a></li>
-            <li><a href="#faq" class="mobile-drawer__link">Common Questions</a></li>
-          </ul>
-        </nav>
-
-        <div class="mobile-drawer__cta">
-          <a href="#quote" class="btn btn--teal btn--full">Request a Clear, Honest Quote</a>
-          <p class="mobile-drawer__subnote">Fair‑priced • Fully insured • No hidden fees</p>
-        </div>
       </div>
     </div>
   </header>
@@ -1023,6 +990,55 @@
       </div>
     </div>
   </footer>
+
+  <!-- Full-Viewport Fixed Mobile Navigation Drawer (Direct Child of Body — Works at Any Scroll Position) -->
+  <div class="mobile-drawer" id="mobile-drawer" hidden>
+    <div class="mobile-drawer__backdrop" id="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Mobile navigation menu">
+      <div class="mobile-drawer__header">
+        <a href="#" class="mobile-drawer__brand" id="mobile-drawer-logo">
+          <img
+            src="assets/logo/sparkleuk-logo-light.png"
+            alt="Sparkleuk Ltd"
+            width="180"
+            height="182"
+            class="mobile-drawer__logo"
+          >
+          <div class="mobile-drawer__brand-meta">
+            <strong>Sparkleuk Ltd</strong>
+            <span>Cleaning • PAT Testing • Safety</span>
+          </div>
+        </a>
+        <button
+          type="button"
+          class="mobile-drawer__close"
+          id="mobile-drawer-close"
+          aria-label="Close navigation menu"
+        >
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-drawer__nav" aria-label="Mobile primary navigation">
+        <ul class="mobile-drawer__list">
+          <li><a href="#about" class="mobile-drawer__link"><span>About Sparkleuk Ltd</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="#services" class="mobile-drawer__link"><span>Cleaning Services</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="#pat-testing" class="mobile-drawer__link mobile-drawer__link--teal"><span>In‑House PAT Testing</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="#who-we-help" class="mobile-drawer__link"><span>Who We Help</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="#help-for-heroes" class="mobile-drawer__link"><span>2.5% Help for Heroes Pledge</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="#how-it-works" class="mobile-drawer__link"><span>How Booking Works</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="#faq" class="mobile-drawer__link"><span>FAQs</span><span aria-hidden="true">→</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="mobile-drawer__cta">
+        <a href="#quote" class="btn btn--teal btn--full">Request a Clear, Honest Quote</a>
+        <p class="mobile-drawer__subnote">Veteran‑founded • Fully insured • No hidden fees</p>
+      </div>
+    </div>
+  </div>
 
   <!-- Mobile Sticky Quick-Quote Bar -->
   <div class="mobile-sticky-cta" id="mobile-sticky-cta" aria-hidden="true">

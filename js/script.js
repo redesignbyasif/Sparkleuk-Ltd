@@ -49,6 +49,7 @@
   const menuToggle = document.getElementById('menu-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const mobileBackdrop = document.getElementById('mobile-drawer-backdrop');
+  const mobileCloseBtn = document.getElementById('mobile-drawer-close');
 
   function setDrawerState(open) {
     if (!menuToggle || !mobileDrawer) return;
@@ -56,9 +57,14 @@
     menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
     if (open) {
       mobileDrawer.hidden = false;
+      document.documentElement.classList.add('drawer-open');
       document.body.classList.add('drawer-open');
+      if (mobileCloseBtn) {
+        mobileCloseBtn.focus({ preventScroll: true });
+      }
     } else {
       mobileDrawer.hidden = true;
+      document.documentElement.classList.remove('drawer-open');
       document.body.classList.remove('drawer-open');
     }
     updateScrollUI();
@@ -69,6 +75,13 @@
       const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
       setDrawerState(!isOpen);
     });
+
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', () => {
+        setDrawerState(false);
+        menuToggle.focus({ preventScroll: true });
+      });
+    }
 
     if (mobileBackdrop) {
       mobileBackdrop.addEventListener('click', () => setDrawerState(false));
@@ -81,7 +94,7 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
         setDrawerState(false);
-        menuToggle.focus();
+        menuToggle.focus({ preventScroll: true });
       }
     });
 
